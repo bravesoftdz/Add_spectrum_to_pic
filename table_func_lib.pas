@@ -427,7 +427,7 @@ try
       {find end of number}
       k:=j;
       while (k<=Length(s)) and ((s[k]<>' ') and (s[k]<>#9)) do begin
-          if s[k]='.' then s[k]:=',';
+          if (s[k]='.') or (s[k]=',') then s[k]:=separator;
           inc(k);
       end;
       Y[i]:=StrToFloat(copy(s,j,k-j));
